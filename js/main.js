@@ -288,4 +288,19 @@
 
 	});		
 
+	$("#contactForm").on("submit", function(e) {
+    /* OnAction here*/
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    
+    var email = 'lahiruudayanga95@gmail.com';
+        var subject = formData.get('contactSubject');
+        var emailBody = formData.get('contactMessage');
+
+        if(subject.length >0 && emailBody.length > 0){
+          document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody;
+        }
+});
+
 })(jQuery);
